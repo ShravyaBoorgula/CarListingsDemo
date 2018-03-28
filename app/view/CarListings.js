@@ -35,9 +35,9 @@ Ext.define('CarListings.view.CarListings', {
         type: 'carlistings'
     },
     frame: true,
-    height: 493,
+    height: 600,
     itemId: 'chartPanel',
-    width: 674,
+    width: 1000,
     title: ' Car Listing',
 
     layout: {
