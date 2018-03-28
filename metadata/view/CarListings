@@ -1,0 +1,417 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "designer|initialView": true,
+        "designer|uiInterfaceName": "default-framed",
+        "designer|userAlias": "carlistings",
+        "designer|userClassName": "CarListings",
+        "frame": true,
+        "height": 493,
+        "itemId": "chartPanel",
+        "layout": "vbox",
+        "requires": [
+            "Ext.chart.plugin.ItemEvents"
+        ],
+        "title": " Car Listing",
+        "width": 674
+    },
+    "configAlternates": {
+        "container|align": "string",
+        "designer|initialView": "boolean",
+        "designer|uiInterfaceName": "string",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "frame": "boolean",
+        "height": "auto",
+        "layout": "string",
+        "title": "string",
+        "width": "auto",
+        "itemId": "string",
+        "requires": "typedarray"
+    },
+    "name": "MyPanel",
+    "designerId": "73427be1-17cb-446d-bfca-4bedfa376fb4",
+    "viewControllerInstanceId": "71632bf2-71dd-43e5-b238-82a52786ce51",
+    "viewModelInstanceId": "93c76c7d-80d7-45df-bd86-23c35a82db11",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "store": "CarDataStore"
+            },
+            "configAlternates": {
+                "layout|flex": "number",
+                "store": "store"
+            },
+            "name": "MyGridPanel",
+            "designerId": "c0205452-8b87-4486-9399-8680c84ce956",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "manufacturer",
+                        "text": "Manufacturer"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn1",
+                    "designerId": "c170f8e9-a1de-459e-858c-7bb20584979d"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "model",
+                        "text": "Model"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn2",
+                    "designerId": "b3c68c37-f6ad-452e-8d08-230a1efca2c2"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "price",
+                        "text": "Price"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn3",
+                    "designerId": "4885b99f-3884-4d21-8d8c-587c5f734447"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "wiki",
+                        "text": "Wiki"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn4",
+                    "designerId": "43365adb-17b5-4ff3-81fb-66d052b946bd"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "img",
+                        "text": "Img"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn5",
+                    "designerId": "aaa8ca64-5208-4534-bcc8-62965a553388"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "quality",
+                        "text": "Quality"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn6",
+                    "designerId": "1666eaed-acd4-4248-ac26-464d96701d50"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridpanelSelect",
+                        "implHandler": [
+                            " // grab a reference to the detailPanel via itemId",
+                            " // the # in front of the id indicates that we would like to grab a reference by",
+                            " var detailPanel = Ext.ComponentQuery.query('#detailPanel')[0];",
+                            " // update the detailPanel with data",
+                            " // this will trigger the tpl to become updates",
+                            " detailPanel.update(record.data);",
+                            "// grab a reference to the qualityChart, notice we use down here instead of child",
+                            " // because down will go down the container hierarchy at any depth and child",
+                            " // only retrieves direct children",
+                            " var chart = Ext.ComponentQuery.query('#qualityChart')[0];",
+                            " // get the quality field out of this record",
+                            " var qualityData = record.get('quality');",
+                            " chart.store.loadData(qualityData);"
+                        ],
+                        "name": "select",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onGridpanelSelect",
+                    "designerId": "a0ab52bc-0faa-482a-9829-4081a04e2eab"
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 159,
+                "itemId": "detailPanel",
+                "layout|flex": 1,
+                "layout|margins": "5 0 0 0"
+            },
+            "configAlternates": {
+                "layout|flex": "number",
+                "title": "string",
+                "height": "auto",
+                "itemId": "string",
+                "layout|margins": "string"
+            },
+            "name": "MyPanel",
+            "designerId": "1cc5e24c-a878-4fe4-b32f-c749d2c8ae38",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "tpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "tpl",
+                        "implHandler": [
+                            "`<img src=\"data/{img}\" style=\"float: right\" />",
+                            "Manufacturer: {manufacturer} ",
+                            "Model: <a href=\"{wiki}\" target=\"_blank\">{model}</a><br>",
+                            "Price: {price:usMoney}`"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "tpl",
+                    "designerId": "4e873d84-0ad2-483e-8f8c-db59ed8df479"
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "chartPanel",
+                "layout": "fit",
+                "layout|flex": 1,
+                "layout|margins": "5 0 0 0"
+            },
+            "configAlternates": {
+                "itemId": "string",
+                "layout": "string",
+                "layout|flex": "number",
+                "layout|margins": "string"
+            },
+            "name": "MyPanel1",
+            "designerId": "b9e70308-182a-460f-a7a2-043ccb4758b7",
+            "cn": [
+                {
+                    "type": "Ext.chart.CartesianChart",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 250,
+                        "insetPadding": [
+                            "20"
+                        ],
+                        "itemId": "qualityChart",
+                        "store": "CarChartStore",
+                        "width": 478
+                    },
+                    "configAlternates": {
+                        "height": "auto",
+                        "insetPadding": "object",
+                        "itemId": "string",
+                        "store": "store",
+                        "width": "auto"
+                    },
+                    "name": "ColumnChart",
+                    "designerId": "ddc197d1-b5e9-4963-ae5d-77a1b37a5d04",
+                    "isBuiltIn": true,
+                    "iconCls": "icon-column-chart",
+                    "autoName": "ColumnChart",
+                    "cn": [
+                        {
+                            "type": "Ext.chart.axis.Category",
+                            "reference": {
+                                "name": "axes",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fields": [
+                                    "name"
+                                ],
+                                "title": [
+                                    "Quality"
+                                ]
+                            },
+                            "configAlternates": {
+                                "fields": "typedarray",
+                                "title": "object"
+                            },
+                            "name": "MyCategoryAxis",
+                            "designerId": "4c9b5168-a923-41a8-815b-5fb5a2bb5327"
+                        },
+                        {
+                            "type": "Ext.chart.axis.Numeric",
+                            "reference": {
+                                "name": "axes",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fields": [
+                                    "rating"
+                                ],
+                                "majorTickSteps": 4,
+                                "maximum": 5,
+                                "minimum": 0,
+                                "position": "left",
+                                "title": [
+                                    "Score"
+                                ]
+                            },
+                            "configAlternates": {
+                                "fields": "typedarray",
+                                "majorTickSteps": "number",
+                                "maximum": "number",
+                                "minimum": "number",
+                                "position": "string",
+                                "title": "object"
+                            },
+                            "name": "MyNumericAxis",
+                            "designerId": "bcdd30a8-5d2d-4c20-ab2d-72700998d224"
+                        },
+                        {
+                            "type": "Ext.chart.series.Bar",
+                            "reference": {
+                                "name": "series",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "label": [
+                                    " {",
+                                    "     display: 'insideEnd',",
+                                    "     field: 'rating',",
+                                    "     color: '#333',",
+                                    "     'text-anchor': 'middle'",
+                                    " }"
+                                ],
+                                "xField": "name",
+                                "yField": [
+                                    "rating"
+                                ]
+                            },
+                            "configAlternates": {
+                                "label": "object",
+                                "xField": "datafield",
+                                "yField": "typedarray"
+                            },
+                            "name": "MyBarSeries",
+                            "designerId": "90658c18-fa32-4d29-a02e-835695c91c83"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onQualityChartItemClick",
+                                "implHandler": [
+                                    "    //Ext.Msg.alert(\"u clicked on: \", item.data.title);",
+                                    "    console.log(\"hello\");"
+                                ],
+                                "name": "itemclick",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onQualityChartItemClick",
+                            "designerId": "c0437e9a-029e-4f42-8e85-dbdd7af70ad7"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
