@@ -35,7 +35,7 @@ Ext.define('CarListings.view.CarListings', {
         type: 'carlistings'
     },
     frame: true,
-    height: 600,
+    height: 650,
     itemId: 'chartPanel',
     width: 1000,
     title: ' Car Listing',
@@ -47,7 +47,7 @@ Ext.define('CarListings.view.CarListings', {
     items: [
         {
             xtype: 'gridpanel',
-            flex: 1,
+            width: '100%',
             store: 'CarDataStore',
             columns: [
                 {
@@ -87,16 +87,21 @@ Ext.define('CarListings.view.CarListings', {
         },
         {
             xtype: 'panel',
-            flex: 1,
-            margins: '5 0 0 0',
-            height: 159,
+            baseCls: 'x-deatils-panel',
+            height: 200,
             itemId: 'detailPanel',
             tpl: [
-                '`<img src="data/{img}" style="float: right" />',
+                '<figure class="carThumbnail">',
+                '<img src="data/{img}" style="float: left" />',
+                '<figcaption>    ',
                 'Manufacturer: {manufacturer} ',
                 'Model: <a href="{wiki}" target="_blank">{model}</a><br>',
-                'Price: {price:usMoney}`'
-            ]
+                'Price: {price:usMoney}',
+                '</figcaption>',
+                '</figure>'
+            ],
+            width: '100%',
+            bodyPadding: 10
         },
         {
             xtype: 'panel',
